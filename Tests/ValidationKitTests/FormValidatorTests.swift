@@ -15,7 +15,7 @@ final class FormValidatorTests: XCTestCase {
         validator.performValidation(
             for: Field.first,
             on: "",
-            ruleInputs: [ValidationRuleSet.textIsNotEmpty]
+            ruleInputs: [DefaultValidationRuleSet.textIsNotEmpty]
         )
         
         XCTAssertTrue(validator.validationResults.contains { $0.field == .first } )

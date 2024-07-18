@@ -1,3 +1,3 @@
-internal protocol ValidationRule {
-    func validate(_ text: String) -> ValidationRuleError?
+public protocol ValidationRule {
+    func validate(_ text: String) -> DefaultValidationRuleError?
 }

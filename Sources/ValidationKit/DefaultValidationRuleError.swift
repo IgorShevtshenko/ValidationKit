@@ -1,10 +1,10 @@
-public enum ValidationRuleError: Error, Equatable {
+public enum DefaultValidationRuleError: Error, Equatable {
     case exceededCharactersLimit(Int)
     case onlyDecimals
     case textIsNotProvided
 }
 
-public extension ValidationRuleError? {
+public extension DefaultValidationRuleError? {
 
     var isInputInvalid: Bool {
         switch self {

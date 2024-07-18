@@ -1,4 +1,4 @@
-public enum ValidationRuleSet: ValidationRule {
+public enum DefaultValidationRuleSet: ValidationRule {
 
     case maxLength(Int)
     case onlyDecimals
@@ -15,7 +15,7 @@ public enum ValidationRuleSet: ValidationRule {
         }
     }
 
-    public func validate(_ text: String) -> ValidationRuleError? {
+    public func validate(_ text: String) -> DefaultValidationRuleError? {
         rule.validate(text)
     }
 }

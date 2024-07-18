@@ -4,7 +4,7 @@ public extension Array {
         allSatisfy(\.isValid)
     }
 
-    func errors<T>(for field: T) -> [ValidationRuleError] where Element == ValidationResult<T> {
+    func errors<T>(for field: T) -> [DefaultValidationRuleError] where Element == ValidationResult<T> {
         first { $0.field == field }?.errors ?? []
     }
 }

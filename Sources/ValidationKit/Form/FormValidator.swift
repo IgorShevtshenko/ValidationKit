@@ -8,7 +8,7 @@ public final class FormValidator<T: Equatable>: ObservableObject {
     
     public init() {}
     
-    public func performValidation(for field: T, on text: String, ruleInputs: [ValidationRuleSet]) {
+    public func performValidation(for field: T, on text: String, ruleInputs: [ValidationRule]) {
         validationResults.replace(
             by: ruleInputs.makeResult(by: text, for: field),
             where: { $0.field == field }
@@ -20,7 +20,7 @@ public final class FormValidator<T: Equatable>: ObservableObject {
     }
 }
 
-private extension [ValidationRuleSet] {
+private extension [ValidationRule] {
     
     func makeResult<T>(by text: String, for field: T) -> ValidationResult<T> {
         ValidationResult(

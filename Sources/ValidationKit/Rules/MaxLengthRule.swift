@@ -8,7 +8,7 @@ internal struct MaxLengthRule: ValidationRule {
         self.limit = limit
     }
 
-    func validate(_ text: String) -> ValidationRuleError? {
+    func validate(_ text: String) -> DefaultValidationRuleError? {
         text.count > limit ? .exceededCharactersLimit(limit) : nil
     }
 }
